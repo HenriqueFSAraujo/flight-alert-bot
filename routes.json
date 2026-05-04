@@ -1,0 +1,24 @@
+{
+  "oneway": [
+    {"from": "CNF", "to": "AMS"},
+    {"from": "CNF", "to": "LIS"},
+    {"from": "CNF", "to": "MAD"},
+    {"from": "CNF", "to": "CDG"},
+    {"from": "CNF", "to": "FCO"},
+    {"from": "GRU", "to": "AMS"},
+    {"from": "GRU", "to": "LIS"},
+    {"from": "GRU", "to": "MAD"},
+    {"from": "GIG", "to": "LIS"},
+    {"from": "GIG", "to": "AMS"}
+  ],
+  "roundtrip": [
+    {"from": "CNF", "to": "AMS"},
+    {"from": "CNF", "to": "LIS"},
+    {"from": "CNF", "to": "MAD"},
+    {"from": "CNF", "to": "CDG"},
+    {"from": "CNF", "to": "FCO"},
+    {"from": "GRU", "to": "AMS"},
+    {"from": "GRU", "to": "LIS"},
+    {"from": "GIG", "to": "LIS"}
+  ]
+}
