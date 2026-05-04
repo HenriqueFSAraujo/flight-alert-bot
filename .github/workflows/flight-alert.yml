@@ -2,7 +2,7 @@ name: Flight Alert Bot
 
 on:
   schedule:
-    - cron: '0 11,23 * * *'  # roda 2x por dia (08h e 20h Brasil)
+    - cron: '0 11,15,23 * * *'
   workflow_dispatch: # permite rodar manual
 
 jobs:
