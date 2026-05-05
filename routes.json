@@ -1,27 +1,27 @@
 {
   "oneway": [
-    {"origin": "CNF", "destination": "LIS"},
-    {"origin": "CNF", "destination": "MAD"},
-    {"origin": "CNF", "destination": "BCN"},
-    {"origin": "CNF", "destination": "PAR"},
-    {"origin": "CNF", "destination": "ROM"},
-    {"origin": "CNF", "destination": "MIL"},
-    {"origin": "CNF", "destination": "AMS"},
+    {"from": "CNF", "to": "LIS"},
+    {"from": "CNF", "to": "MAD"},
+    {"from": "CNF", "to": "BCN"},
+    {"from": "CNF", "to": "PAR"},
+    {"from": "CNF", "to": "ROM"},
+    {"from": "CNF", "to": "MIL"},
+    {"from": "CNF", "to": "AMS"},
 
-    {"origin": "GRU", "destination": "LIS"},
-    {"origin": "GRU", "destination": "MAD"},
-    {"origin": "GRU", "destination": "PAR"},
-    {"origin": "GRU", "destination": "AMS"}
+    {"from": "GRU", "to": "LIS"},
+    {"from": "GRU", "to": "MAD"},
+    {"from": "GRU", "to": "PAR"},
+    {"from": "GRU", "to": "AMS"}
   ],
   "roundtrip": [
-    {"origin": "CNF", "destination": "LIS"},
-    {"origin": "CNF", "destination": "MAD"},
-    {"origin": "CNF", "destination": "PAR"},
-    {"origin": "CNF", "destination": "AMS"},
+    {"from": "CNF", "to": "LIS"},
+    {"from": "CNF", "to": "MAD"},
+    {"from": "CNF", "to": "PAR"},
+    {"from": "CNF", "to": "AMS"},
 
-    {"origin": "GRU", "destination": "LIS"},
-    {"origin": "GRU", "destination": "MAD"},
-    {"origin": "GRU", "destination": "PAR"},
-    {"origin": "GRU", "destination": "AMS"}
+    {"from": "GRU", "to": "LIS"},
+    {"from": "GRU", "to": "MAD"},
+    {"from": "GRU", "to": "PAR"},
+    {"from": "GRU", "to": "AMS"}
   ]
 }
