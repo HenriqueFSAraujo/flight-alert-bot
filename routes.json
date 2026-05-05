@@ -1,24 +1,33 @@
-{
-  "oneway": [
-    {"from": "CNF", "to": "AMS"},
-    {"from": "CNF", "to": "LIS"},
-    {"from": "CNF", "to": "MAD"},
-    {"from": "CNF", "to": "CDG"},
-    {"from": "CNF", "to": "FCO"},
-    {"from": "GRU", "to": "AMS"},
-    {"from": "GRU", "to": "LIS"},
-    {"from": "GRU", "to": "MAD"},
-    {"from": "GIG", "to": "LIS"},
-    {"from": "GIG", "to": "AMS"}
-  ],
-  "roundtrip": [
-    {"from": "CNF", "to": "AMS"},
-    {"from": "CNF", "to": "LIS"},
-    {"from": "CNF", "to": "MAD"},
-    {"from": "CNF", "to": "CDG"},
-    {"from": "CNF", "to": "FCO"},
-    {"from": "GRU", "to": "AMS"},
-    {"from": "GRU", "to": "LIS"},
-    {"from": "GIG", "to": "LIS"}
-  ]
-}
+[
+  {"origin": "CNF", "destination": "LIS"},
+  {"origin": "CNF", "destination": "MAD"},
+  {"origin": "CNF", "destination": "BCN"},
+  {"origin": "CNF", "destination": "PAR"},
+  {"origin": "CNF", "destination": "ROM"},
+  {"origin": "CNF", "destination": "MIL"},
+  {"origin": "CNF", "destination": "AMS"},
+  {"origin": "CNF", "destination": "FRA"},
+  {"origin": "CNF", "destination": "MUC"},
+  {"origin": "CNF", "destination": "LON"},
+
+  {"origin": "GRU", "destination": "LIS"},
+  {"origin": "GRU", "destination": "MAD"},
+  {"origin": "GRU", "destination": "BCN"},
+  {"origin": "GRU", "destination": "PAR"},
+  {"origin": "GRU", "destination": "ROM"},
+  {"origin": "GRU", "destination": "MIL"},
+  {"origin": "GRU", "destination": "AMS"},
+  {"origin": "GRU", "destination": "FRA"},
+  {"origin": "GRU", "destination": "MUC"},
+  {"origin": "GRU", "destination": "LON"},
+
+  {"origin": "GIG", "destination": "LIS"},
+  {"origin": "GIG", "destination": "MAD"},
+  {"origin": "GIG", "destination": "BCN"},
+  {"origin": "GIG", "destination": "PAR"},
+  {"origin": "GIG", "destination": "ROM"},
+  {"origin": "GIG", "destination": "MIL"},
+  {"origin": "GIG", "destination": "AMS"},
+  {"origin": "GIG", "destination": "FRA"},
+  {"origin": "GIG", "destination": "LON"}
+]
