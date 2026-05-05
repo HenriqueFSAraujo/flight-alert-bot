@@ -120,21 +120,39 @@ def daterange(start: str, end: str, step_days: int = 1) -> Iterable[date]:
         current += timedelta(days=step_days)
 
 
+def normalize_route(route: Any, section: str, index: int) -> Dict[str, str]:
+    if not isinstance(route, dict):
+        raise RuntimeError(f"Rota invalida em {section}[{index}]. Use: {{\"from\": \"CNF\", \"to\": \"LIS\"}}")
+
+    origin = route.get("from") or route.get("origin")
+    destination = route.get("to") or route.get("destination")
+    if not origin or not destination:
+        raise RuntimeError(f"Rota invalida em {section}[{index}]. Use: {{\"from\": \"CNF\", \"to\": \"LIS\"}}")
+
+    return {"from": str(origin).strip().upper(), "to": str(destination).strip().upper()}
+
+
 def load_routes() -> Dict[str, List[Dict[str, str]]]:
     if not ROUTES_PATH.exists():
         raise RuntimeError(f"Arquivo de rotas nao encontrado: {ROUTES_PATH}")
 
-    with ROUTES_PATH.open("r", encoding="utf-8") as f:
+    with ROUTES_PATH.open("r", encoding="utf-8-sig") as f:
         routes = json.load(f)
 
+    if isinstance(routes, list):
+        print("Aviso: routes.json esta no formato antigo de lista. Interpretando como rotas so ida.")
+        routes = {"oneway": routes, "roundtrip": []}
+    elif not isinstance(routes, dict):
+        raise RuntimeError("routes.json precisa ser um objeto com as chaves oneway e roundtrip.")
+
+    normalized: Dict[str, List[Dict[str, str]]] = {"oneway": [], "roundtrip": []}
     for section in ("oneway", "roundtrip"):
         entries = routes.get(section, [])
         if not isinstance(entries, list):
             raise RuntimeError(f"A chave {section} em routes.json precisa ser uma lista.")
         for index, route in enumerate(entries, start=1):
-            if not isinstance(route, dict) or not route.get("from") or not route.get("to"):
-                raise RuntimeError(f"Rota invalida em {section}[{index}]. Use: {{\"from\": \"CNF\", \"to\": \"LIS\"}}")
-    return routes
+            normalized[section].append(normalize_route(route, section, index))
+    return normalized
 
 
 def init_db() -> None:
